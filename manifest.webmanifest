@@ -1,0 +1,34 @@
+{
+  "name": "سلّم — تعلّم الإنجليزية من A1 إلى C2",
+  "short_name": "سلّم",
+  "description": "مسار عربي لتعلّم الإنجليزية على ستة مستويات: دروس قصيرة، مراجعة متباعدة، تدريب نطق، ومهام إنتاج.",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./index.html#/home",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f5f7f9",
+  "theme_color": "#0f6e63",
+  "categories": ["education", "productivity"],
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
