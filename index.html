@@ -9,8 +9,35 @@
       content="مسار عربي لتعلّم الإنجليزية على ستة مستويات (A1–C2): دروس قصيرة، مفردات بنظام المراجعة المتباعدة، تدريب نطق، ومهام إنتاج يومية."
     />
     <meta name="theme-color" content="#0f6e63" />
+    <meta property="og:title" content="سلّم — تعلّم الإنجليزية من A1 إلى C2" />
+    <meta property="og:description" content="مسار عربي لتعلّم الإنجليزية: 6 مستويات، مراجعة متباعدة، تدريب نطق، ومهام إنتاج." />
+    <meta property="og:url" content="https://monstorjohan-png.github.io/sullam-english/" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230f6e63'/><text x='32' y='43' font-family='monospace' font-size='30' font-weight='700' fill='white' text-anchor='middle'>S</text></svg>" />
+    <script>
+      // PWA install banner + service-worker registration
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js').catch(function(){});
+      }
+      window.addEventListener('beforeinstallprompt', function(e) {
+        e.preventDefault();
+        window.deferredPrompt = e;
+        var btn = document.querySelector('[data-act="install-app"]');
+        if (btn) btn.hidden = false;
+      });
+      document.addEventListener('click', function(e) {
+        if (e.target && e.target.getAttribute('data-act') === 'install-app') {
+          if (window.deferredPrompt) {
+            window.deferredPrompt.prompt();
+            window.deferredPrompt.userChoice.then(function() {
+              window.deferredPrompt = null;
+            });
+          }
+        }
+      });
+    </script>
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body>
@@ -71,6 +98,9 @@
           <a class="btn btn--sm btn--block" href="#/test"><svg><use href="#i-clipboard"/></svg> اختبار تحديد المستوى</a>
           <button class="btn btn--ghost btn--sm btn--block" id="themeToggle" type="button">
             <svg><use href="#i-moon"/></svg> <span>الوضع الليلي</span>
+          </button>
+          <button class="btn btn--primary btn--sm btn--block" data-act="install-app" hidden>
+            <svg><use href="#i-download"/></svg> <span>تثبيت التطبيق</span>
           </button>
         </div>
       </aside>
